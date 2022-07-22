@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\v1\CustomerController;
 use App\Http\Controllers\Api\v2\CustomerController as V2CustomerController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,14 +24,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::resource('v1/customer', CustomerController::class)->only(['index', 'show', 'update', 'destroy', 'store']);
 // Route::resource('customer', CustomerController::class)->except(['edit', 'create']);
 
-Route::prefix('v1')->group(function(){
-    Route::resource('customer',CustomerController::class)->only(['show', 'update', 'destroy', 'store']);
+Route::resource('/', HomeController::class)->only(['index']);;
 
-    Route::resource('customer',CustomerController::class)->only(['index']);
+Route::prefix('v1')->group(function () {
+    Route::resource('customer', CustomerController::class)->only(['show', 'update', 'destroy', 'store']);
+
+    Route::resource('customer', CustomerController::class)->only(['index']);
 });
 
-Route::prefix('v2')->group(function(){
+Route::prefix('v2')->group(function () {
     // Route::resource('customer',CustomerController::class)->only(['show', 'update', 'destroy', 'store']);
 
-    Route::resource('customer',V2CustomerController::class)->only(['show']);
+    Route::resource('customer', V2CustomerController::class)->only(['show']);
 });
