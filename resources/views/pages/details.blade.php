@@ -4,7 +4,7 @@
 <div class="single">
     <div class="container">
             <div class="single-top">
-                    <a href="#"><img class="img-responsive" src="images/single-1.jpg" alt=" "></a>
+                    <a href="#"><img class="img-responsive" src="{{ asset('images/single-1.jpg') }}" alt=" "></a>
                 <div class=" single-grid">
                     <h4>SED LOREET ALIQUAM LEOTELLUS DOLOR DAPIBUS</h4>				
                         <ul class="blog-ic">
@@ -26,13 +26,13 @@
                           </div>
                       <div class="media-right">
                         <a href="#">
-                            <img src="images/si.png" alt=""> </a>
+                            <img src="{{ asset('images/si.png') }}" alt=""> </a>
                       </div>
                  </div>
                   <div class="media">
                       <div class="media-left">
                         <a href="#">
-                            <img src="images/si.png" alt="">
+                            <img src="{{ asset('images/si.png') }}" alt="">
                         </a>
                       </div>
                       <div class="media-body">

@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords"
         content="Coffee Break Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 
     <title>Blog Api Laravel</title>
 
@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="header-top">
         <div class="container">
             <div class="head-main">
-                <a href="index.html"><img src="images/logo-1.png" alt="" /></a>
+                <a href="index.html"><img src="{{ ('images/logo-1.png') }}" alt="" /></a>
             </div>
         </div>
     </div>
@@ -60,17 +60,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="navigation">
                     <span class="menu"></span>
                     <ul class="navig">
-                        <li><a href="{{ route('home') }}" class="active">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="typo.html">Typo</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{ route('home') }}" class="active">Trang chủ</a></li>
+                        <li><a href="about.html">Về chúng tôi</a></li>
+                        <li><a href="gallery.html">Tin tức</a></li>
+                        
                     </ul>
                 </div>
                 <div class="header-right">
                     <div class="search-bar">
-                        <input type="text" value="Search" onfocus="this.value = '';"
-                            onblur="if (this.value == '') {this.value = 'Search';}">
+                        <input type="text" value="" placeholder="Tìm kiếm...">
                         <input type="submit" value="">
                     </div>
                     <ul>
@@ -94,8 +92,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     </script>
     <!-- script-for-menu -->
+
     <!--banner-starts-->
-    @include('pages.banner')
+    
     <!--banner-end-->
 
     <!--main-starts-->
@@ -110,42 +109,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li>
                         <a href="#">
                             <div class="banner-1">
-                                <img src="images/s-1.jpg" class="img-responsive" alt="">
+                                <img src="{{ asset('images/s-1.jpg') }}" class="img-responsive" alt="">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="#">
                             <div class="banner-1">
-                                <img src="images/s-2.jpg" class="img-responsive" alt="">
+                                <img src="{{ asset('images/s-2.jpg') }}" class="img-responsive" alt="">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="#">
                             <div class="banner-1">
-                                <img src="images/s-3.jpg" class="img-responsive" alt="">
+                                <img src="{{ asset('images/s-3.jpg') }}" class="img-responsive" alt="">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="#">
                             <div class="banner-1">
-                                <img src="images/s-4.jpg" class="img-responsive" alt="">
+                                <img src="{{ asset('images/s-4.jpg') }}" class="img-responsive" alt="">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="#">
                             <div class="banner-1">
-                                <img src="images/s-5.jpg" class="img-responsive" alt="">
+                                <img src="{{ asset('images/s-5.jpg') }}" class="img-responsive" alt="">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="#">
                             <div class="banner-1">
-                                <img src="images/s-6.jpg" class="img-responsive" alt="">
+                                <img src="{{ asset('images/s-6.jpg') }}" class="img-responsive" alt="">
                             </div>
                         </a>
                     </li>
@@ -179,7 +178,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     });
                 </script>
-                <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+                <script type="text/javascript" src="{{ asset('js/jquery.flexisel.js') }}"></script>
                 <div class="clearfix"> </div>
             </div>
         </div>

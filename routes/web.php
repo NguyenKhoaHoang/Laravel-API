@@ -1,9 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BaivietController;
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
+Route::get('/admin', function () {
+    return view('welcome');
+})->name('home');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::get('/', [HomeController::class, 'index'])->name('main');
 
 Route::get('/bai-viet/{id}', [BaivietController::class, 'show'])->name('bai-viet');
+
+require __DIR__.'/auth.php';
