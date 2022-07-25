@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\v1\CategoryPostController;
+use App\Http\Controllers\Api\v1\CustomerController;
+use App\Http\Controllers\Api\v2\CustomerController as V2CustomerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BaivietController;
 use App\Http\Controllers\HomeController;
@@ -29,3 +32,4 @@ Route::get('/', [HomeController::class, 'index'])->name('main');
 Route::get('/bai-viet/{id}', [BaivietController::class, 'show'])->name('bai-viet');
 
 require __DIR__.'/auth.php';
+

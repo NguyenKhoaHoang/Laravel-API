@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\v1;
 use App\Models\CategoryPost;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class CategoryPostController extends Controller
 {
@@ -40,7 +41,7 @@ class CategoryPostController extends Controller
         $category = new CategoryPost();
         $category->title = $request->title;
         $category->save();
-        return redirect()->back();
+        return redirect()->route('category.index')->with('success', 'Category Add Success!!');
     }
 
     /**
@@ -49,9 +50,10 @@ class CategoryPostController extends Controller
      * @param  \App\Models\CategoryPost  $categoryPost
      * @return \Illuminate\Http\Response
      */
-    public function show(CategoryPost $categoryPost)
+    public function show($categoryPost)
     {
-        //
+        $category = CategoryPost::find($categoryPost);
+        return view('layouts.category.show', compact('category'));
     }
 
     /**
@@ -72,9 +74,15 @@ class CategoryPostController extends Controller
      * @param  \App\Models\CategoryPost  $categoryPost
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CategoryPost $categoryPost)
+    public function update(Request $request, $categoryPost)
     {
-        //
+        CategoryPost::find($categoryPost)->update([
+            'title' => $request->title
+        ]);
+        // $request->session()->put('success', 'Category Update Successfully!!');
+        // Session::put('success','Category Update Success!!');
+        // Session::save();
+        return redirect()->route('category.index')->with('success', 'Category Update Success!!');
     }
 
     /**

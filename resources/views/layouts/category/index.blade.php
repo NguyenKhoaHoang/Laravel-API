@@ -5,6 +5,19 @@
         </h2>
     </x-slot>
 
+    @if (Session::has('success'))
+        <div class="alert alert-success">
+            <p>{{ Session::get('success') }}</p>
+        </div>
+        
+    @endif
+
+    @if (Session::has('failure'))
+        <div class="alert alert-danger">
+            <p>{{ Session::get('failure') }}</p>
+        </div>
+    @endif
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -19,18 +32,23 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $i = 1;
+                            @endphp
                             @foreach ($category as $categoryItem)
                                 <tr>
-                                    <th scope="row">{{ $categoryItem->id }}</th>
+                                    <th scope="row">{{ $i++ }}</th>
                                     <td>{{ $categoryItem->title }}</td>
                                     <td>
                                         <form method="POST" action="{{ route('category.destroy', $categoryItem->id) }}">
                                             @method('DELETE')
                                             @csrf
-                                            <input type="submit" value="Delete" class="btn btn-danger mt-2 mb-2 bg-red-500">
+                                            <input type="submit" value="Delete" class="btn btn-danger btn-sm mt-2 mb-2 bg-red-500">
                                         </form>
-                                        |
-                                        <a href="">Edit</a>
+
+                                        <a class="btn btn-success btn-sm mt-2 mb-2 bg-green-500" href="{{ route('category.show', $categoryItem->id) }}">Edit</a>
+                                            
+
                                     </td>
                                 </tr>
                             @endforeach
