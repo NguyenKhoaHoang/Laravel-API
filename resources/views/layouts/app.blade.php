@@ -11,6 +11,15 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
         <!-- Scripts -->
+        <script type="text/javascript" src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                CKEDITOR.replace('ckeditor_shortdesc');
+                CKEDITOR.replace('ckeditor_desc');
+            });
+            
+        </script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">

@@ -11,7 +11,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{ route('category.index') }}" class="btn btn-primary w-full mb-5">Xem danh mục bài viết</a>
                     <a href="{{ route('category.create') }}" class="btn btn-primary w-full mb-5">Thêm danh mục bài viết</a>
-                    <a class="btn btn-success w-full mb-5">Thêm bài viết</a>
+                    <a href="{{ route('post.create') }}" class="btn btn-success w-full mb-5">Thêm bài viết</a>
                     
                 </div>
 

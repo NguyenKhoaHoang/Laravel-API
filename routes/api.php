@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\v1\CategoryPostController;
 use App\Http\Controllers\Api\v1\CustomerController;
+use App\Http\Controllers\Api\v1\PostController;
 use App\Http\Controllers\Api\v2\CustomerController as V2CustomerController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
@@ -33,6 +34,8 @@ Route::prefix('v1')->group(function () {
     Route::resource('customer', CustomerController::class)->only(['index']);
 
     Route::resource('category', CategoryPostController::class);
+
+    Route::resource('post', PostController::class);
 });
 
 Route::prefix('v2')->group(function () {
